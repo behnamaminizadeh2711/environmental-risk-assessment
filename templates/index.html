@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Assessment App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .instructions {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card p-4">
+            <h1 class="text-center mb-4">Risk Assessment Application</h1>
+            <p class="text-center text-muted mb-4">
+                Upload an Excel file and select a risk assessment method to analyze environmental risks.
+            </p>
+            <!-- فرم آپلود -->
+            <form method="post" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="file" class="form-label">Upload Excel File</label>
+                    <input type="file" class="form-control" id="file" name="file" accept=".xlsx, .xls" required>
+                </div>
+                <div class="mb-3">
+                    <label for="method" class="form-label">Select Risk Assessment Method</label>
+                    <select class="form-select" id="method" name="method" required>
+                        <option value="">-- Select a method --</option>
+                        <option value="fmea">FMEA</option>
+                        <option value="risk matrix">Risk Matrix</option>
+                        <option value="bow-tie">Bow-Tie</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Run Analysis</button>
+                </div>
+            </form>
+            {% if error %}
+                <div class="alert alert-danger mt-3" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+
+            <!-- بخش راهنما -->
+            <div class="instructions">
+                <h5>Excel File Requirements</h5>
+                <p>Your Excel file must have the following columns with the specified value ranges:</p>
+                <ul>
+                    <li><strong>Risk Name</strong>: String (e.g., "A")</li>
+                    <li><strong>Probability (%)</strong>: Number between 0 and 100 (for FMEA, e.g., 85)</li>
+                    <li><strong>Impact (Severity)</strong>: Number between 1 and 10 (for FMEA, e.g., 8)</li>
+                    <li><strong>Detection</strong>: Number between 1 and 10 (for FMEA, e.g., 2)</li>
+                    <li><strong>Probability</strong>: Number between 1 and 5 (for Risk Matrix, e.g., 5)</li>
+                    <li><strong>Impact</strong>: Number between 1 and 5 (for Risk Matrix, e.g., 4)</li>
+                    <li><strong>Cause Likelihood</strong>: Number between 1 and 5 (for Bow-Tie, e.g., 5)</li>
+                    <li><strong>Consequence Severity</strong>: Number between 1 and 5 (for Bow-Tie, e.g., 4)</li>
+                    <li><strong>Barrier Effectiveness</strong>: Number between 1 and 5 (for Bow-Tie, e.g., 2)</li>
+                    <li><strong>Task Affected</strong>: String (e.g., "استخراج مواد اولیه")</li>
+                </ul>
+                <p><strong>Example Row:</strong> A, 85, 8, 2, 5, 4, 5, 4, 2, استخراج مواد اولیه</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

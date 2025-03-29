@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Assessment Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card p-4">
+            <h1 class="text-center mb-4">Risk Assessment Results</h1>
+            <h3 class="mb-3">{{ method }} Results (All Risks)</h3>
+            {{ selected_table | safe }}
+        </div>
+
+        <div class="card p-4">
+            <h3 class="mb-3">Top 3 Risks ({{ other_method1 }})</h3>
+            {{ other_table1 | safe }}
+        </div>
+
+        <div class="card p-4">
+            <h3 class="mb-3">Top 3 Risks ({{ other_method2 }})</h3>
+            {{ other_table2 | safe }}
+        </div>
+
+        {% if combined_plot %}
+            <div class="card p-4">
+                <h3 class="mb-3">Comparison of Risk Scores Across Methods</h3>
+                <img src="data:image/png;base64,{{ combined_plot }}" alt="Combined Risk Scores Chart">
+            </div>
+        {% endif %}
+
+        {% if errors %}
+            <div class="alert alert-warning" role="alert">
+                <h4>Errors Encountered:</h4>
+                <ul>
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+        <div class="text-center mt-4">
+            <a href="{{ url_for('download_results') }}" class="btn btn-primary">Download Results (TXT)</a>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Home</a>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

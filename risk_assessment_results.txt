@@ -1,0 +1,39 @@
+FMEA Results (All Risks):
+Risk Name  Probability (%)  Impact (Severity)  Detection Task Affected  Impact  Cause Likelihood  Consequence Severity  Barrier Effectiveness Task Affected.1  Probability   RPN
+        M               78                  6          8            MM       3                 4                     3                      3              ee            4 37.44
+        E               89                  3          8            EE       2                 4                     5                      1           qqqqq            2 21.36
+       A3               80                  6          3           VVV       4                 1                     3                      4              rr            4 14.40
+       B3               47                  8          3        VVVVVV       5                 3                     3                      1           rrrrr            4 11.28
+        J               47                  3          7            JJ       2                 4                     3                      1               w            4  9.87
+        B               19                  6          7            BB       2                 2                     1                      4              qq            2  7.98
+       C1               39                  5          3       VVVVVVV       1                 3                     3                      4               t            4  5.85
+        F               70                  2          4            FF       1                 3                     5                      5          qqqqqq            2  5.60
+       B1               15                  7          3          VVVV       1                 3                     3                      3             rrr            4  3.15
+        L               12                  5          5            LL       2                 5                     3                      4               e            4  3.00
+       B2               11                  7          3         VVVVV       2                 3                     3                      2            rrrr            4  2.31
+        C                4                 10          5            CC       3                 3                     3                      3             qqq            2  2.00
+       C2               25                  2          3      VVVVVVVV       1                 3                     2                      4              tt            4  1.50
+        I               11                  2          4            II       5                 3                     3                      2            wwww            3  0.88
+       A2                4                  6          3            VV       3                 1                     3                      5               r            4  0.72
+       C3               24                  1          3     VVVVVVVVV       1                 3                     2                      4             ttt            2  0.72
+       A1                4                  6          3             V       3                 2                     3                      1            eeee            4  0.72
+        K                9                  4          2            KK       2                 5                     3                      5           wwwww            4  0.72
+        H               56                  1          1            HH       1                 2                     4                      3             www            3  0.56
+        G                2                  9          3            GG       4                 1                     4                      4              ww            3  0.54
+        D               11                  1          4            DD       3                 5                     4                      2            qqqq            2  0.44
+        N                2                  5          3            NN       3                 3                     3                      2             eee            4  0.30
+        A                5                  5          1            AA       1                 1                     2                      5               q            1  0.25
+
+
+RISK MATRIX Top 3 Risks:
+Risk Name  Probability (%)  Impact (Severity)  Detection Task Affected  Impact  Cause Likelihood  Consequence Severity  Barrier Effectiveness Task Affected.1  Probability  Risk Score
+       B3               47                  8          3        VVVVVV       5                 3                     3                      1           rrrrr            4        20.0
+       A3               80                  6          3           VVV       4                 1                     3                      4              rr            4        16.0
+        I               11                  2          4            II       5                 3                     3                      2            wwww            3        15.0
+
+
+BOW-TIE Top 3 Risks:
+Risk Name  Probability (%)  Impact (Severity)  Detection Task Affected  Impact  Cause Likelihood  Consequence Severity  Barrier Effectiveness Task Affected.1  Probability  Barrier Score
+        E               89                  3          8            EE       2                 4                     5                      1           qqqqq            2           20.0
+        J               47                  3          7            JJ       2                 4                     3                      1               w            4           12.0
+        D               11                  1          4            DD       3                 5                     4                      2            qqqq            2           10.0
